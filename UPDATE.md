@@ -144,6 +144,26 @@ npm run build
 
 Test the updated SDK to confirm functionality with the new OpenAPI changes.
 
+## Step 5: Update Version and Push to GitHub
+
+Based on the changes made during the update, determine the appropriate version bump following semantic versioning (semver):
+
+- **Major** (X.0.0): Breaking changes (e.g., removed endpoints, changed required fields)
+- **Minor** (x.Y.0): New features (e.g., added endpoints, new optional fields)
+- **Patch** (x.y.Z): Bug fixes or non-breaking improvements (e.g., type fixes, documentation)
+
+Analyze the OpenAPI changes and resource updates to decide the version increment. Update the `version` field in `package.json` accordingly.
+
+Then, commit the changes with a descriptive message including the new version:
+
+```bash
+git add .
+git commit -m "vX.Y.Z - [brief description of changes]"
+git push origin main
+```
+
+If this is a new release, consider creating a GitHub release with the changelog.
+
 ## Key Principles
 
 1. **Resource Grouping**: Organize methods under nested objects matching API resources

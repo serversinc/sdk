@@ -1,13 +1,1 @@
-export const servers = (client) => ({
-    command: (serverId, body) => client.request('POST', `/v1/servers/${serverId}/command`, body),
-    commands: {
-        list: (serverId, params) => {
-            const query = new URLSearchParams();
-            if (params?.container_id)
-                query.append('container_id', params.container_id);
-            if (params?.page)
-                query.append('page', params.page.toString());
-            return client.request('GET', `/v1/servers/${serverId}/commands?${query.toString()}`);
-        },
-    },
-});
+export const servers=e=>({command:(n,r)=>e.request("POST",`/v1/servers/${n}/command`,r),commands:{list:(n,r)=>{const a=new URLSearchParams;return r?.container_id&&a.append("container_id",r.container_id),r?.page&&a.append("page",r.page.toString()),e.request("GET",`/v1/servers/${n}/commands?${a.toString()}`)}}});

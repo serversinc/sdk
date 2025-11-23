@@ -9,11 +9,20 @@
     "src/types.d.ts"
   ],
   "scripts": {
-    "build": "tsc",
-    "generate-types": "openapi-typescript ../api/public/docs/openapi.yaml --output src/types.d.ts",
-    "prepublishOnly": "npm run build"
+    "build": "npm run lint && tsc && npm run minify",
+    "lint": "tsc --noEmit",
+    "minify": "find dist -name '*.js' -exec terser {} -o {} --compress --mangle \\;",
+    "postbuild": "find dist/resources -name '*.d.ts' -delete",
+    "generate-types": "openapi-typescript ../path/to/openapi.yaml --output src/types.d.ts"
   },
-  "keywords": ["api", "sdk", "serversinc", "typescript", "docker", "deployment"],
+  "keywords": [
+    "api",
+    "sdk",
+    "serversinc",
+    "typescript",
+    "docker",
+    "deployment"
+  ],
   "author": "Serversinc",
   "license": "MIT",
   "repository": {
@@ -21,7 +30,8 @@
     "url": "https://github.com/serversinc/sdk"
   },
   "devDependencies": {
-    "typescript": "^5.0.0",
-    "openapi-typescript": "^7.0.0"
+    "openapi-typescript": "^7.0.0",
+    "terser": "^5.44.1",
+    "typescript": "^5.0.0"
   }
 }

@@ -1,3 +1,1 @@
-export const events = (client) => ({
-    redeploy: (hook, headers) => client.request('POST', `/v1/events/${hook}`, undefined, headers, false),
-});
+export const events=e=>({redeploy:(t,o)=>e.request("POST",`/v1/events/${t}`,void 0,o,!1)});

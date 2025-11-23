@@ -136,11 +136,13 @@ Create or update similar files for `servers.ts` and `events.ts` as needed.
 
 ## Step 4: Build and Verify
 
-Build the project to ensure no compilation errors:
+Build the project, which includes linting, compilation, and minification:
 
 ```bash
 npm run build
 ```
+
+This runs `npm run lint` (TypeScript type checking), `tsc` (compilation to dist/), `npm run minify` (minifies all .js files in dist/ in place), and `npm run postbuild` (removes unnecessary .d.ts files from dist/resources/ to keep dist clean).
 
 Test the updated SDK to confirm functionality with the new OpenAPI changes.
 
@@ -152,7 +154,7 @@ Based on the changes made during the update, determine the appropriate version b
 - **Minor** (x.Y.0): New features (e.g., added endpoints, new optional fields)
 - **Patch** (x.y.Z): Bug fixes or non-breaking improvements (e.g., type fixes, documentation)
 
-Analyze the OpenAPI changes and resource updates to decide the version increment. Update the `version` field in `package.json` accordingly.
+Analyze the OpenAPI changes and resource updates to decide the version increment. Update the `version` field in `package.json` and `src/client.ts` accordingly.
 
 Then, commit the changes with a descriptive message including the new version:
 

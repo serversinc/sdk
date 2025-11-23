@@ -1,0 +1,27 @@
+{
+  "name": "@serversinc/sdk",
+  "version": "1.0.0",
+  "description": "Official TypeScript SDK for the Serversinc API",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src/types.d.ts"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "generate-types": "openapi-typescript ../api/public/docs/openapi.yaml --output src/types.d.ts",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": ["api", "sdk", "serversinc", "typescript", "docker", "deployment"],
+  "author": "Serversinc",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/serversinc/sdk"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "openapi-typescript": "^7.0.0"
+  }
+}

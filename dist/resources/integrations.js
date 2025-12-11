@@ -1,0 +1,1 @@
+export const integrations=e=>({list:()=>e.request("GET","/v1/integrations"),create:t=>e.request("POST","/v1/integrations",t),delete:t=>e.request("DELETE",`/v1/integrations/${t}`),github:{create:(t,r)=>e.request("POST",`/v1/integrations/${t}/create`,r),redirect:t=>e.request("GET",`/v1/integrations/${t}/redirect`)}});

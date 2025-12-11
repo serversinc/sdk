@@ -2,7 +2,15 @@ import { apiTokens } from './resources/apiTokens';
 import { alerts } from './resources/alerts';
 import { applications } from './resources/applications';
 import { servers } from './resources/servers';
-import { events } from './resources/events';
+import { user } from './resources/user';
+import { workspaces } from './resources/workspaces';
+import { integrations } from './resources/integrations';
+import { providers } from './resources/providers';
+import { deployments } from './resources/deployments';
+import { notifications } from './resources/notifications';
+import { projects } from './resources/projects';
+import { templates } from './resources/templates';
+import { github } from './resources/github';
 
 export class ApiError extends Error {
   constructor(public status: number, public statusText: string, public body?: string) {
@@ -95,5 +103,13 @@ export class Serversinc {
   alerts        = alerts(this);
   applications  = applications(this);
   servers       = servers(this);
-  events        = events(this);
+  user          = user(this);
+  workspaces    = workspaces(this);
+  integrations  = integrations(this);
+  providers     = providers(this);
+  deployments   = deployments(this);
+  notifications = notifications(this);
+  projects      = projects(this);
+  templates     = templates(this);
+  github        = github(this);
 }

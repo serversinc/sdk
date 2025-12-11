@@ -1,0 +1,1 @@
+export const projects=e=>({list:()=>e.request("GET","/v1/projects"),create:t=>e.request("POST","/v1/projects",t),get:t=>e.request("GET",`/v1/projects/${t}`),delete:t=>e.request("DELETE",`/v1/projects/${t}`),attach:(t,r)=>e.request("POST",`/v1/projects/${t}/attach`,r),detach:(t,r)=>e.request("POST",`/v1/projects/${t}/detach`,r)});

@@ -1,0 +1,1 @@
+export const github=e=>({branches:(t,b)=>e.request("GET",`/v1/github/branches/${t}/${b}`)});

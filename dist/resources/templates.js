@@ -1,0 +1,1 @@
+export const templates=e=>({get:t=>e.request("GET",`/v1/templates/${t}`)});

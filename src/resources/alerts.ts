@@ -1,10 +1,13 @@
 import type { Serversinc } from '../client';
+import type { Alert, CreateAlertRequest, UpdateAlertRequest } from '../types';
 
 export const alerts = (client: Serversinc) => ({
-  list: () => client.request('GET', '/v1/alerts'),
-  create: (body: any) => client.request('POST', '/v1/alerts', body),
-  get: (alertId: string) => client.request('GET', `/v1/alerts/${alertId}`),
-  update: (alertId: string, body: any) => client.request('PUT', `/v1/alerts/${alertId}`, body),
-  delete: (alertId: string) => client.request('DELETE', `/v1/alerts/${alertId}`),
-  toggle: (alertId: string) => client.request('PUT', `/v1/alerts/${alertId}/toggle`),
+  list: (): Promise<Alert[]> => client.request('GET', '/v1/alerts'),
+  create: (data: CreateAlertRequest): Promise<Alert> => client.request('POST', '/v1/alerts', data),
+  get: (alertId: string): Promise<Alert> => client.request('GET', `/v1/alerts/${alertId}`),
+  update: (alertId: string, data: UpdateAlertRequest): Promise<Alert> =>
+    client.request('PUT', `/v1/alerts/${alertId}`, data),
+  delete: (alertId: string): Promise<void> => client.request('DELETE', `/v1/alerts/${alertId}`),
+  toggle: (alertId: string): Promise<{ id: string; status: string }> =>
+    client.request('PUT', `/v1/alerts/${alertId}/toggle`),
 });

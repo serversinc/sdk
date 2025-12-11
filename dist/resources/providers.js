@@ -1,0 +1,1 @@
+export const providers=e=>({regions:r=>e.request("GET",`/v1/providers/${r}/regions`),serverTypes:r=>e.request("GET",`/v1/providers/${r}/server-types`),datacenters:r=>e.request("GET",`/v1/providers/${r}/datacenters`),createServer:(r,s)=>e.request("POST",`/v1/providers/${r}/servers`,s)});

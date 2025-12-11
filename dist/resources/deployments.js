@@ -1,0 +1,1 @@
+export const deployments=e=>({list:()=>e.request("GET","/v1/deployments"),get:t=>e.request("GET",`/v1/deployments/${t}`)});

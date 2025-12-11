@@ -1,1 +1,0 @@
-export const events=e=>({redeploy:(t,o)=>e.request("POST",`/v1/events/${t}`,void 0,o,!1)});

@@ -273,6 +273,21 @@ export type Deployment = {
   // Add deployment-specific properties when model is available
 };
 
+// Pagination Types
+export type PaginationMetadata = {
+  current_page: number;
+  last_page: number;
+  per_page: number;
+  total: number;
+  from?: number;
+  to?: number;
+};
+
+export type PaginatedResponse<T> = {
+  data: T[];
+  metadata: PaginationMetadata;
+};
+
 // Request/Response Types
 export type CreateServerRequest = {
   name: string;
@@ -409,14 +424,50 @@ export type ImportServerRequest = {
 };
 
 
-
 // Response Types
-export type PaginatedResponse<T> = {
-  data: T[];
-  current_page: number;
-  last_page: number;
-  per_page: number;
-  total: number;
+export type ServersListResponse = {
+  servers: Server[];
+  metadata: PaginationMetadata;
+};
+
+export type ApplicationsListResponse = {
+  applications: Application[];
+  metadata: PaginationMetadata;
+};
+
+export type AlertsListResponse = {
+  alerts: Alert[];
+  metadata: PaginationMetadata;
+};
+
+export type NotificationsListResponse = {
+  notifications: NotificationChannel[];
+  metadata: PaginationMetadata;
+};
+
+export type ProjectsListResponse = {
+  projects: Project[];
+  metadata: PaginationMetadata;
+};
+
+export type WorkspacesListResponse = {
+  workspaces: Workspace[];
+  metadata: PaginationMetadata;
+};
+
+export type ApiTokensListResponse = {
+  tokens: ApiToken[];
+  metadata: PaginationMetadata;
+};
+
+export type IntegrationsListResponse = {
+  integrations: IntegrationToken[];
+  metadata: PaginationMetadata;
+};
+
+export type DeploymentsListResponse = {
+  deployments: Deployment[];
+  metadata: PaginationMetadata;
 };
 
 export type ApiResponse<T> = {

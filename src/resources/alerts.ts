@@ -1,8 +1,8 @@
 import type { Serversinc } from '../client';
-import type { Alert, CreateAlertRequest, UpdateAlertRequest } from '../types';
+import type { Alert, CreateAlertRequest, UpdateAlertRequest, AlertsListResponse } from '../types';
 
 export const alerts = (client: Serversinc) => ({
-  list: (): Promise<Alert[]> => client.request('GET', '/v1/alerts'),
+  list: (): Promise<AlertsListResponse> => client.request('GET', '/v1/alerts'),
   create: (data: CreateAlertRequest): Promise<Alert> => client.request('POST', '/v1/alerts', data),
   get: (alertId: string): Promise<Alert> => client.request('GET', `/v1/alerts/${alertId}`),
   update: (alertId: string, data: UpdateAlertRequest): Promise<Alert> =>

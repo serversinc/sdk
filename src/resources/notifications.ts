@@ -4,11 +4,12 @@ import type {
   CreateNotificationChannelRequest,
   UpdateNotificationChannelRequest,
   ChannelHistory,
+  NotificationsListResponse,
 } from '../types';
 
 export const notifications = (client: Serversinc) => ({
   types: (): Promise<string[]> => client.request('GET', '/v1/notifications/types'),
-  list: (): Promise<NotificationChannel[]> => client.request('GET', '/v1/notifications'),
+  list: (): Promise<NotificationsListResponse> => client.request('GET', '/v1/notifications'),
   create: (data: CreateNotificationChannelRequest): Promise<NotificationChannel> =>
     client.request('POST', '/v1/notifications', data),
   get: (resourceId: string): Promise<NotificationChannel> =>

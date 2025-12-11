@@ -7,11 +7,12 @@ import type {
   ApplicationLabel,
   ApplicationVolume,
   ApplicationPort,
+  ApplicationsListResponse,
 } from '../types';
 
 export const applications = (client: Serversinc) => ({
   // Application CRUD
-  list: (): Promise<Application[]> => client.request('GET', '/v1/applications'),
+  list: (): Promise<ApplicationsListResponse> => client.request('GET', '/v1/applications'),
   create: (data: CreateApplicationRequest): Promise<Application> => client.request('POST', '/v1/applications', data),
   get: (applicationId: string): Promise<Application> => client.request('GET', `/v1/applications/${applicationId}`),
   update: (applicationId: string, data: Partial<Application>): Promise<Application> =>

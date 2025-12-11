@@ -17,7 +17,7 @@ export declare class Serversinc {
     setToken(token: string): void;
     request<T>(method: 'GET' | 'POST' | 'PUT' | 'DELETE', path: string, body?: any, extraHeaders?: Record<string, string>, authenticated?: boolean): Promise<T>;
     apiTokens: {
-        list: () => Promise<import("./types").ApiToken[]>;
+        list: () => Promise<import("./types").ApiTokensListResponse>;
         create: (data: import("./types").CreateApiTokenRequest) => Promise<{
             token: import("./types").ApiToken;
             plainTextToken: string;
@@ -25,7 +25,7 @@ export declare class Serversinc {
         delete: (tokenId: number) => Promise<void>;
     };
     alerts: {
-        list: () => Promise<import("./types").Alert[]>;
+        list: () => Promise<import("./types").AlertsListResponse>;
         create: (data: import("./types").CreateAlertRequest) => Promise<import("./types").Alert>;
         get: (alertId: string) => Promise<import("./types").Alert>;
         update: (alertId: string, data: import("./types").UpdateAlertRequest) => Promise<import("./types").Alert>;
@@ -36,7 +36,7 @@ export declare class Serversinc {
         }>;
     };
     applications: {
-        list: () => Promise<import("./types").Application[]>;
+        list: () => Promise<import("./types").ApplicationsListResponse>;
         create: (data: import("./types").CreateApplicationRequest) => Promise<import("./types").Application>;
         get: (applicationId: string) => Promise<import("./types").Application>;
         update: (applicationId: string, data: Partial<import("./types").Application>) => Promise<import("./types").Application>;
@@ -93,7 +93,7 @@ export declare class Serversinc {
         };
     };
     servers: {
-        list: () => Promise<import("./types").Server[]>;
+        list: () => Promise<import("./types").ServersListResponse>;
         create: (data: import("./types").CreateServerRequest) => Promise<import("./types").Server>;
         get: (serverId: string) => Promise<import("./types").Server>;
         update: (serverId: string, data: Partial<import("./types").Server>) => Promise<import("./types").Server>;
@@ -132,7 +132,7 @@ export declare class Serversinc {
         update: (data: import("./types").UpdateUserRequest) => Promise<import("./types").User>;
     };
     workspaces: {
-        list: () => Promise<import("./types").Workspace[]>;
+        list: () => Promise<import("./types").WorkspacesListResponse>;
         current: () => Promise<import("./types").Workspace>;
         change: (data: import("./types").ChangeWorkspaceRequest) => Promise<void>;
         invite: (data: import("./types").InviteUserRequest) => Promise<void>;
@@ -141,7 +141,7 @@ export declare class Serversinc {
         subscription: () => Promise<import("./types").WorkspaceSubscription>;
     };
     integrations: {
-        list: () => Promise<import("./types").IntegrationToken[]>;
+        list: () => Promise<import("./types").IntegrationsListResponse>;
         create: (data: import("./types").CreateIntegrationRequest) => Promise<import("./types").IntegrationToken>;
         delete: (id: string) => Promise<void>;
         github: {
@@ -158,12 +158,12 @@ export declare class Serversinc {
         createServer: (provider: string, data: import("./types").CreateServerRequest) => Promise<any>;
     };
     deployments: {
-        list: () => Promise<import("./types").Deployment[]>;
+        list: () => Promise<import("./types").DeploymentsListResponse>;
         get: (id: string) => Promise<import("./types").Deployment>;
     };
     notifications: {
         types: () => Promise<string[]>;
-        list: () => Promise<import("./types").NotificationChannel[]>;
+        list: () => Promise<import("./types").NotificationsListResponse>;
         create: (data: import("./types").CreateNotificationChannelRequest) => Promise<import("./types").NotificationChannel>;
         get: (resourceId: string) => Promise<import("./types").NotificationChannel>;
         update: (resourceId: string, data: import("./types").UpdateNotificationChannelRequest) => Promise<import("./types").NotificationChannel>;
@@ -177,7 +177,7 @@ export declare class Serversinc {
         }>;
     };
     projects: {
-        list: () => Promise<import("./types").Project[]>;
+        list: () => Promise<import("./types").ProjectsListResponse>;
         create: (data: import("./types").CreateProjectRequest) => Promise<import("./types").Project>;
         get: (id: string) => Promise<import("./types").Project>;
         delete: (id: string) => Promise<void>;

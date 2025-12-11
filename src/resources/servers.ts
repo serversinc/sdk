@@ -9,13 +9,13 @@ import type {
   PullImageRequest,
   PerformActionRequest,
   ServerMetrics,
-  PaginatedResponse,
+  ServersListResponse,
   CommandHistory,
 } from '../types';
 
 export const servers = (client: Serversinc) => ({
   // Server CRUD
-  list: (): Promise<Server[]> => client.request('GET', '/v1/servers'),
+  list: (): Promise<ServersListResponse> => client.request('GET', '/v1/servers'),
   create: (data: CreateServerRequest): Promise<Server> => client.request('POST', '/v1/servers', data),
   get: (serverId: string): Promise<Server> => client.request('GET', `/v1/servers/${serverId}`),
   update: (serverId: string, data: Partial<Server>): Promise<Server> => client.request('PUT', `/v1/servers/${serverId}`, data),

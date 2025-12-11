@@ -1,8 +1,8 @@
 import type { Serversinc } from '../client';
-import type { IntegrationToken, CreateIntegrationRequest } from '../types';
+import type { IntegrationToken, CreateIntegrationRequest, IntegrationsListResponse } from '../types';
 
 export const integrations = (client: Serversinc) => ({
-  list: (): Promise<IntegrationToken[]> => client.request('GET', '/v1/integrations'),
+  list: (): Promise<IntegrationsListResponse> => client.request('GET', '/v1/integrations'),
   create: (data: CreateIntegrationRequest): Promise<IntegrationToken> => client.request('POST', '/v1/integrations', data),
   delete: (id: string): Promise<void> => client.request('DELETE', `/v1/integrations/${id}`),
   github: {

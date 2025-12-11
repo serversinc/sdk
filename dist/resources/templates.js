@@ -1,1 +1,1 @@
-export const templates=e=>({get:t=>e.request("GET",`/v1/templates/${t}`)});
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.templates=void 0;const templates=e=>({get:t=>e.request("GET",`/v1/templates/${t}`)});exports.templates=templates;

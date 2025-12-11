@@ -1,1 +1,1 @@
-export const github=e=>({branches:(t,b)=>e.request("GET",`/v1/github/branches/${t}/${b}`)});
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.github=void 0;const github=e=>({branches:(t,s)=>e.request("GET",`/v1/github/branches/${t}/${s}`)});exports.github=github;

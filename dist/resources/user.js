@@ -1,1 +1,1 @@
-export const user=e=>({get:()=>e.request("GET","/v1/user"),update:r=>e.request("POST","/v1/user",r)});
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.user=void 0;const user=e=>({get:()=>e.request("GET","/v1/user"),update:s=>e.request("POST","/v1/user",s)});exports.user=user;

@@ -1,1 +1,1 @@
-export const deployments=e=>({list:()=>e.request("GET","/v1/deployments"),get:t=>e.request("GET",`/v1/deployments/${t}`)});
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.deployments=void 0;const deployments=e=>({list:()=>e.request("GET","/v1/deployments"),get:t=>e.request("GET",`/v1/deployments/${t}`)});exports.deployments=deployments;

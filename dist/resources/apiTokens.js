@@ -1,1 +1,1 @@
-export const apiTokens=e=>({list:()=>e.request("GET","/v1/api-tokens"),create:t=>e.request("POST","/v1/api-tokens",t),delete:t=>e.request("DELETE",`/v1/api-tokens/${t}`)});
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.apiTokens=void 0;const apiTokens=e=>({list:()=>e.request("GET","/v1/api-tokens"),create:s=>e.request("POST","/v1/api-tokens",s),delete:s=>e.request("DELETE",`/v1/api-tokens/${s}`)});exports.apiTokens=apiTokens;

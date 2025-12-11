@@ -1,1 +1,1 @@
-export{Serversinc,ApiError}from"./client";
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.ApiError=exports.Serversinc=void 0;var client_1=require("./client");Object.defineProperty(exports,"Serversinc",{enumerable:!0,get:function(){return client_1.Serversinc}}),Object.defineProperty(exports,"ApiError",{enumerable:!0,get:function(){return client_1.ApiError}});

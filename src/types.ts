@@ -11,7 +11,6 @@ export type User = {
   github_username?: string;
   email_verified_at?: string;
   email_verify_token?: string;
-  current_workspace_id?: string;
   created_at?: string;
   updated_at?: string;
 };

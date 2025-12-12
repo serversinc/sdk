@@ -128,8 +128,8 @@ export declare class Serversinc {
         }) => Promise<import("./types").ServerMetrics[]>;
     };
     user: {
-        get: () => Promise<import("./types").User>;
-        update: (data: import("./types").UpdateUserRequest) => Promise<import("./types").User>;
+        get: () => Promise<import("./types").UserResponse>;
+        update: (data: import("./types").UpdateUserRequest) => Promise<import("./types").UserResponse>;
     };
     workspaces: {
         list: () => Promise<import("./types").WorkspacesListResponse>;

@@ -3,16 +3,13 @@ export type User = {
   id: string; // ULID
   name: string;
   email: string;
-  github_id?: number;
-  github_access_token?: string;
-  github_refresh_token?: string;
-  github_expires_at?: string;
-  github_avatar?: string;
-  github_username?: string;
-  email_verified_at?: string;
-  email_verify_token?: string;
-  created_at?: string;
-  updated_at?: string;
+  created_at: string;
+  updated_at: string;
+};
+
+export type UserResponse = {
+  user: User;
+  emails: Record<string, string>;
 };
 
 export type Workspace = {
